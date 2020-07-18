@@ -80,23 +80,64 @@ resource "aws_security_group" "allow_ssh" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+
   tags = {
     Name        = "Udacity Allow SSH SG"
     Project     = "Udacity"
   }
 }
 
+resource "aws_security_group" "allow_http" {
+  name        = "allow_http"
+  description = "Allow HTTP Inbound Traffic"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    description = "HTTP"
+    from_port   = "80"
+    to_port     = "80"
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name        = "Udacity Allow HTTP SG"
+    Project     = "Udacity"
+  }
+}
+
 resource "aws_instance" "t2_server" {
+#   count         = 4
   count         = 1
   subnet_id     = aws_subnet.public.id
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = "t2.micro"
   key_name      = "${var.region}-key"
-  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id, aws_security_group.allow_http.id]
 
   tags = {
     Name        = "Udacity T2 (${count.index + 1})"
     Project     = "Udacity"
   }
 }
+
+# resource "aws_instance" "m4_server" {
+#   count         = 2
+#   subnet_id     = aws_subnet.public.id
+#   ami           = data.aws_ami.amazon_linux_2.id
+#   instance_type = "m4.large"
+#   key_name      = "${var.region}-key"
+#   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+
+#   tags = {
+#     Name        = "Udacity M4 (${count.index + 1})"
+#     Project     = "Udacity"
+#   }
+# }
