@@ -29,3 +29,17 @@ Run the command by providing specifc region and AMI.
 ```
 aws ec2 describe-images --region us-east-1 --image-ids ami-08f3d892de259504d
 ```
+
+### Setup environment variable
+
+Type in the command in the bash and execute it:
+
+```
+export greeting="Hello world"
+```
+
+### Create zip archive that contains AWS Lambda source code
+
+```
+zip lambda.zip lambda.py
+```
