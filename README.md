@@ -17,7 +17,7 @@ terraform apply -var 'profile=udacity-training' -var 'region=us-east-1'
 ### How to destroy infrastructure deployed by Terraform
 
 ```
-terraform destory
+terraform destroy
 ```
 
 **Note** If there are some infrastructure defined manually, for example the script created VPN, but you manually setup a security group, then the `terraform destory` process won't be able to clean up the VPN. You must remove the security group first.
