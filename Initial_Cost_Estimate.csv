@@ -1,0 +1,17 @@
+Group hierarchy,Region,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+Initial_Cost_Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,4106.72,49280.64,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (4 TB), Additional backup storage (12 TB)"
+Initial_Cost_Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,1858.8,22305.6,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (4 TB), Additional backup storage (4 TB)"
+Initial_Cost_Estimate,US East (N. Virginia),S3 Standard,0,47.1,565.2,USD,S3 Standard storage (2 TB per month)
+Initial_Cost_Estimate,US East (N. Virginia),S3 Intelligent - Tiering,0,47.1,565.2,USD,S3 INT storage (2 TB per month)
+Initial_Cost_Estimate,US East (N. Virginia),S3 Glacier,0,131.07,1572.84,USD,S3 Glacier storage (32 TB per month)
+Initial_Cost_Estimate,US East (N. Virginia),Data Transfer,0,0,0,USD," Inbound (from: Not selected) 0 TB per month 
+ Outbound (to: Not selected) 0 TB per month 
+"
+Initial_Cost_Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,77.22,926.64,USD,Number of NAT Gateways (2)
+Initial_Cost_Estimate,US East (N. Virginia),Elastic Load Balancing,0,763.95,9167.4,USD,Number of Application Load Balancers (1)
+Initial_Cost_Estimate,US East (N. Virginia),Amazon EC2,0,1176.58,14118.96,USD,"Operating system (Linux), Quantity (8), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (256 GB), Instance type (t3.xlarge)"
+Initial_Cost_Estimate,US East (N. Virginia),Amazon EC2,0,294.14,3529.68,USD,"Operating system (Linux), Quantity (4), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (128 GB), Instance type (t3.large)"
+,,,,,,,
+,,,,,,,
+,,,,,,,
+"AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,
