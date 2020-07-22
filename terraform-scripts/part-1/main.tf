@@ -51,8 +51,7 @@ data "aws_security_group" "allow_http" {
 }
 
 resource "aws_instance" "t2_server" {
-#   count         = 4
-  count         = 1
+  count         = 4
   subnet_id     = data.aws_subnet.public.id
   ami           = data.aws_ami.amazon_linux_2.id
   instance_type = "t2.micro"
@@ -65,16 +64,16 @@ resource "aws_instance" "t2_server" {
   }
 }
 
-# resource "aws_instance" "m4_server" {
-#   count         = 2
-#   subnet_id     = aws_subnet.public.id
-#   ami           = data.aws_ami.amazon_linux_2.id
-#   instance_type = "m4.large"
-#   key_name      = "${var.region}-key"
-#   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+resource "aws_instance" "m4_server" {
+  count         = 2
+  subnet_id     = aws_subnet.public.id
+  ami           = data.aws_ami.amazon_linux_2.id
+  instance_type = "m4.large"
+  key_name      = "${var.region}-key"
+  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
-#   tags = {
-#     Name        = "Udacity M4 (${count.index + 1})"
-#     Project     = "Udacity"
-#   }
-# }
+  tags = {
+    Name        = "Udacity M4 (${count.index + 1})"
+    Project     = "Udacity"
+  }
+}
