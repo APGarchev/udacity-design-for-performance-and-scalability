@@ -3,8 +3,31 @@ provider "aws" {
   region  = var.region
 }
 
-data "aws_iam_policy" "lambda_basic_execution" {
-  arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+resource "aws_cloudwatch_log_group" "lambda_log_group" {
+  name              = "/aws/lambda/greet"
+  retention_in_days = 14
+}
+
+resource "aws_iam_policy" "lambda_basic_execution" {
+  name        = "lambda_basic_execution"
+  description = "IAM policy for logging from a lambda"
+
+  policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+EOF
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
@@ -29,7 +52,7 @@ EOF
 
 resource "aws_iam_role_policy_attachment" "role-policy-attach" {
   role       = aws_iam_role.iam_for_lambda.name
-  policy_arn = data.aws_iam_policy.lambda_basic_execution.arn
+  policy_arn = aws_iam_policy.lambda_basic_execution.arn
 }
 
 resource "aws_lambda_function" "greet" {
@@ -47,4 +70,6 @@ resource "aws_lambda_function" "greet" {
       greeting = "Hello Udacity"
     }
   }
+
+  depends_on = [aws_iam_role_policy_attachment.role-policy-attach, aws_cloudwatch_log_group.lambda_log_group]
 }
