@@ -1,6 +1,6 @@
 Group hierarchy,Region,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
 Reduced_Cost_Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,3388.692,40664.3,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (4 TB), Additional backup storage (12 TB)"
-Reduced_Cost_Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,1179.973,14159.68,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (4 TB), Additional backup storage (4 TB)"
+Reduced_Cost_Estimate,US East (N. Virginia),Amazon RDS for MySQL,0,1020.1,12241.24,USD,"Quantity (1), Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (4 TB), Additional backup storage (4 TB)"
 Reduced_Cost_Estimate,US East (N. Virginia),S3 Standard,0,47.1,565.2,USD,S3 Standard storage (2 TB per month)
 Reduced_Cost_Estimate,US East (N. Virginia),S3 Intelligent - Tiering,0,47.1,565.2,USD,S3 INT storage (2 TB per month)
 Reduced_Cost_Estimate,US East (N. Virginia),S3 Glacier,0,131.07,1572.84,USD,S3 Glacier storage (32 TB per month)
@@ -8,7 +8,7 @@ Reduced_Cost_Estimate,US East (N. Virginia),Data Transfer,0,0,0,USD," Inbound (f
  Outbound (to: Not selected) 0 TB per month 
 "
 Reduced_Cost_Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,77.22,926.64,USD,Number of NAT Gateways (2)
-Reduced_Cost_Estimate,US East (N. Virginia),Elastic Load Balancing,0,763.95,9167.4,USD,Number of Application Load Balancers (1)
+Initial_Cost_Estimate,US East (N. Virginia),Elastic Load Balancing,0,989.68,11876.16,USD,Number of Application Load Balancers (2)
 Reduced_Cost_Estimate,US East (N. Virginia),Amazon EC2,0,610.43,7325.16,USD,"Operating system (Linux), Quantity (6), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (256 GB), Instance type (t3.xlarge)"
 Reduced_Cost_Estimate,US East (N. Virginia),Amazon EC2,0,127.41,1528.92,USD,"Operating system (Linux), Quantity (4), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (128 GB), Instance type (t3.medium)"
 ,,,,,,,
@@ -17,4 +17,4 @@ Pricing strategy of Web and Application Servers EC2 Instances is changed from On
 Quantity of Application Server EC2 Instances is decreased from 8 to 6,,,,,,,
 Instance type of Web Server EC2 Instances is changed from t3.large to t3.medium,,,,,,,
 Pricing strategy of RDS Master and Read-replica instances is changed from On-Demand Instances to Standard Reserved Instances,,,,,,,
-Instance type of RDS Read-replica Instance is changed from db.m5.4xlarge to db.m5.2xlarge ,,,,,,,
+Instance type of RDS Read-replica Instance is changed from db.m5.4xlarge to db.m5.xlarge ,,,,,,,

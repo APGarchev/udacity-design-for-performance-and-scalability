@@ -8,7 +8,7 @@ Increased_Cost Estimate,US East (N. Virginia),Data Transfer,0,0,0,USD," Inbound 
  Outbound (to: Not selected) 0 TB per month 
 "
 Increased_Cost Estimate,US East (N. Virginia),Amazon Virtual Private Cloud (VPC),0,77.22,926.64,USD,Number of NAT Gateways (2)
-Increased_Cost Estimate,US East (N. Virginia),Elastic Load Balancing,0,763.95,9167.4,USD,Number of Application Load Balancers (1)
+Initial_Cost_Estimate,US East (N. Virginia),Elastic Load Balancing,0,989.68,11876.16,USD,Number of Application Load Balancers (2)
 Increased_Cost Estimate,US East (N. Virginia),Amazon EC2,0,3222.53,38670.36,USD,"Operating system (Linux), Quantity (12), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (256 GB), Instance type (t3.2xlarge)"
 Increased_Cost Estimate,US East (N. Virginia),Amazon EC2,0,805.63,9667.56,USD,"Operating system (Linux), Quantity (6), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (128 GB), Instance type (t3.xlarge)"
 ,,,,,,,
